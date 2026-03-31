@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "signalyx"
+version = "0.2.0"
+description = "Python SDK for the Signalyx Crypto API — trading signals, technical analysis, whale tracking, liquidations, market data"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Signalyx Crypto", email = "support@signalyx.eu" }
+]
+keywords = ["crypto", "trading", "signals", "bitcoin", "api", "technical-analysis"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+websockets = ["websockets>=11.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "responses>=0.23",
+    "websockets>=11.0",
+]
+
+[project.urls]
+Homepage = "https://signalyx.eu"
+Documentation = "https://signalyx.eu/docs"
+Repository = "https://github.com/signalyx/signalyx-python"
+"Bug Tracker" = "https://github.com/signalyx/signalyx-python/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["signalyx"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
